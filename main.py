@@ -4,7 +4,7 @@ from bots_commands import*
 
 
 
-app = ApplicationBuilder().token("6009122517:AAHZ7dByHp0J6ofnZ22c_EiMGPPJ-4YWZOQ").build()
+app = ApplicationBuilder().token("Your Token").build()
 
 app.add_handler(CommandHandler("hello", hello))
 app.add_handler(CommandHandler("sum", sum))
