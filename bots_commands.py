@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-import datetime
+from datetime import date
 
 async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(f'Hello {update.effective_user.first_name}!')
@@ -15,7 +15,7 @@ async def sum(update: Update, context: ContextTypes.DEFAULT_TYPE):
     y = int(items[3])
     await update.message.reply_text(f'{x} + {y} = {x + y}')
 async def new_year(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    now_date = datetime.date.today()
-    next_date = datetime.date(2024, 1, 1)
+    now_date = date.today()
+    next_date = date(2024, 1, 1)
     rem_date = next_date - now_date
     await update.message.reply_text(f'До Нового Года осталось: {rem_date}')
